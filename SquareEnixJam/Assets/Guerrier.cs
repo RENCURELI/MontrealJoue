@@ -21,10 +21,6 @@ public class Guerrier : MonoBehaviour
     public GameObject TitleCombat;
     public GameObject TitleEquipment;
     public GameObject TitleRepos;
-<<<<<<< HEAD
-    public GameObject CombatTitle;
-=======
->>>>>>> master
 
     private void Awake()
     {
@@ -33,10 +29,6 @@ public class Guerrier : MonoBehaviour
         ATK = 20f;
         DEF = 35f;
         INI = 30f;
-<<<<<<< HEAD
-        CombatTitle.gameObject.SetActive(false);
-=======
->>>>>>> master
     }
 
     public void Repos()
@@ -55,9 +47,5 @@ public class Guerrier : MonoBehaviour
         TitleCombat.gameObject.SetActive(false);
         TitleEquipment.gameObject.SetActive(false);
         TitleRepos.gameObject.SetActive(false);
-<<<<<<< HEAD
-        CombatTitle.gameObject.SetActive(true);
-=======
->>>>>>> master
     }
 }

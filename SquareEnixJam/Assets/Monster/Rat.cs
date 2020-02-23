@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rat : MonoBehaviour
 {
+<<<<<<< HEAD
     public float MaxHP = 3f;
     public float HP = 3f;
     public float ATK = 15f;
@@ -17,5 +18,17 @@ public class Rat : MonoBehaviour
         ATK = 15f;
         DEF = 20f;
         INI = 0f;
+=======
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+>>>>>>> master
     }
 }

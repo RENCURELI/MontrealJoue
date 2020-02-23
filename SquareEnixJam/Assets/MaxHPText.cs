@@ -18,6 +18,7 @@ public class MaxHPText : MonoBehaviour
     private void Update()
     {
         text = guerrier.MaxHP.ToString();
+        text1.text = text;
         //text = guerrier.MaxHP;
     }
 

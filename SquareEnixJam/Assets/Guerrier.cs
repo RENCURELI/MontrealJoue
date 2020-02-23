@@ -21,6 +21,7 @@ public class Guerrier : MonoBehaviour
     public GameObject TitleCombat;
     public GameObject TitleEquipment;
     public GameObject TitleRepos;
+    public GameObject CombatTitle;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class Guerrier : MonoBehaviour
         ATK = 20f;
         DEF = 35f;
         INI = 30f;
+        CombatTitle.gameObject.SetActive(false);
     }
 
     public void Repos()
@@ -47,5 +49,6 @@ public class Guerrier : MonoBehaviour
         TitleCombat.gameObject.SetActive(false);
         TitleEquipment.gameObject.SetActive(false);
         TitleRepos.gameObject.SetActive(false);
+        CombatTitle.gameObject.SetActive(true);
     }
 }

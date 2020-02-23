@@ -69,7 +69,8 @@ public class DropDownZ1 : MonoBehaviour
             {
                 LaHP -= guerrier.ATK / LaDEF;
                 guerrier.HP -= LaATK / guerrier.DEF;
-                Debug.Log("Combat en cours");
+                Debug.Log("Combat en cours Index 1");
+                Debug.Log(LaHP);
             } while (LaHP > 0);
 
             if (LaHP <= 0 || guerrier.HP <= 0)
@@ -99,7 +100,8 @@ public class DropDownZ1 : MonoBehaviour
             {
                 RaHP -= guerrier.ATK / RaDEF;
                 guerrier.HP -= RaATK / guerrier.DEF;
-                Debug.Log("Combat en cours contre Loup");
+                Debug.Log("Combat en cours index 2");
+                Debug.Log(RaHP);
             } while (RaHP > 0);
 
             if (RaHP <= 0 || guerrier.HP <= 0)
@@ -129,7 +131,8 @@ public class DropDownZ1 : MonoBehaviour
             {
                 LoHP -= guerrier.ATK / LoDEF;
                 guerrier.HP -= LoATK / guerrier.DEF;
-                Debug.Log("Combat en cours");
+                Debug.Log("Combat en cours index 3");
+                Debug.Log(LoHP);
             } while (LoHP > 0);
 
             if (LoHP <= 0 || guerrier.HP <= 0)
@@ -159,7 +162,8 @@ public class DropDownZ1 : MonoBehaviour
             {
                 GoHP -= guerrier.ATK / GoDEF;
                 guerrier.HP -= GoATK / guerrier.DEF;
-                Debug.Log("Combat en cours");
+                Debug.Log("Combat en cours index 4");
+                Debug.Log(GoHP);
             } while (GoHP > 0);
 
             if (GoHP <= 0 || guerrier.HP <= 0)
@@ -189,7 +193,8 @@ public class DropDownZ1 : MonoBehaviour
             {
                 ChHP -= guerrier.ATK / ChDEF;
                 guerrier.HP -= ChATK / guerrier.DEF;
-                Debug.Log("Combat en cours");
+                Debug.Log("Combat en cours index 5");
+                Debug.Log(ChHP);
             } while (ChHP > 0);
 
             if (ChHP <= 0 || guerrier.HP <= 0)

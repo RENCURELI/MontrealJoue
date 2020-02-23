@@ -6,7 +6,7 @@ using TMPro;
 
 public class DropDownZ1 : MonoBehaviour
 {
-    int turns = 1;
+    //int turns = 1;
 
     public Guerrier guerrier;
 
@@ -64,18 +64,13 @@ public class DropDownZ1 : MonoBehaviour
         {
 
             isInCombat = true;
-            Debug.Log("InCombat");
-            if (LaHP > 0 || guerrier.HP > 0)
+            
+            do
             {
-
-                for(int i = 0; i < turns; i++)
-                { 
-                    LaHP -= guerrier.ATK / LaDEF;
-                    guerrier.HP -= LaATK / guerrier.DEF;
-                    Debug.Log("Hit");
-                }
-            }
-
+                LaHP -= guerrier.ATK / LaDEF;
+                guerrier.HP -= LaATK / guerrier.DEF;
+                Debug.Log("Combat en cours");
+            } while (LaHP > 0);
 
             if (LaHP <= 0 || guerrier.HP <= 0)
             {
@@ -92,22 +87,21 @@ public class DropDownZ1 : MonoBehaviour
                 TitleCombat.gameObject.SetActive(true);
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
+                LaHP = LaMaxHP;
             }
 
         }
         if (dropdown.value == 2 && isInCombat == false)
         {
             isInCombat = true;
-            Debug.Log("InCombat");
-            if (RaHP > 0 || guerrier.HP > 0)
+            
+            do
             {
-                for (int i = 0; i < turns; i++)
-                {
-                    RaHP -= guerrier.ATK / RaDEF;
+                RaHP -= guerrier.ATK / RaDEF;
                 guerrier.HP -= RaATK / guerrier.DEF;
-                Debug.Log("Hit");
-                }
-            }
+                Debug.Log("Combat en cours contre Loup");
+            } while (RaHP > 0);
+
             if (RaHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
@@ -123,19 +117,21 @@ public class DropDownZ1 : MonoBehaviour
                 TitleCombat.gameObject.SetActive(true);
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
+                RaHP = RaMaxHP;
             }
 
         }
         if (dropdown.value == 3 && isInCombat == false)
         {
             isInCombat = true;
-            Debug.Log("InCombat");
-            if (LoHP > 0 || guerrier.HP > 0)
+
+            do
             {
                 LoHP -= guerrier.ATK / LoDEF;
                 guerrier.HP -= LoATK / guerrier.DEF;
-                Debug.Log("Hit");
-            }
+                Debug.Log("Combat en cours");
+            } while (LoHP > 0);
+
             if (LoHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
@@ -151,19 +147,21 @@ public class DropDownZ1 : MonoBehaviour
                 TitleCombat.gameObject.SetActive(true);
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
+                LoHP = LoMaxHP;
             }
 
         }
         if (dropdown.value == 4 && isInCombat == false)
         {
             isInCombat = true;
-            Debug.Log("InCombat");
-            if (GoHP > 0 || guerrier.HP > 0)
+
+            do
             {
                 GoHP -= guerrier.ATK / GoDEF;
                 guerrier.HP -= GoATK / guerrier.DEF;
-                Debug.Log("Hit");
-            }
+                Debug.Log("Combat en cours");
+            } while (GoHP > 0);
+
             if (GoHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
@@ -179,19 +177,21 @@ public class DropDownZ1 : MonoBehaviour
                 TitleCombat.gameObject.SetActive(true);
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
+                GoHP = GoMaxHP;
             }
 
         }
         if (dropdown.value == 5 && isInCombat == false)
         {
             isInCombat = true;
-            Debug.Log("InCombat");
-            if (ChHP > 0 || guerrier.HP > 0)
+
+            do
             {
                 ChHP -= guerrier.ATK / ChDEF;
                 guerrier.HP -= ChATK / guerrier.DEF;
-                Debug.Log("Hit");
-            }
+                Debug.Log("Combat en cours");
+            } while (ChHP > 0);
+
             if (ChHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
@@ -207,6 +207,7 @@ public class DropDownZ1 : MonoBehaviour
                 TitleCombat.gameObject.SetActive(true);
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
+                ChHP = ChMaxHP;
             }
 
         }

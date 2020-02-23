@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class DropDownZ1 : MonoBehaviour
+public class Z4DropDown : MonoBehaviour
 {
-    //int turns = 1;
-
     public Guerrier guerrier;
 
     public GameObject Title;
@@ -25,35 +22,35 @@ public class DropDownZ1 : MonoBehaviour
     public TMP_Dropdown dropdown;
     public bool isInCombat = false;
 
-    public float LaMaxHP = 1f;
-    public float LaHP = 1f;
-    public float LaATK = 100f;
-    public float LaDEF = 5f;
-    public float LaINI = 0f;
+    public float VeMaxHP = 50f;
+    public float VeHP = 50f;
+    public float VeATK = 30f;
+    public float VeDEF = 40f;
+    public float VeINI = 0f;
 
-    public float ChMaxHP = 30f;
-    public float ChHP = 30f;
-    public float ChATK = 5f;
-    public float ChDEF = 30f;
-    public float ChINI = 0f;
+    public float SaMaxHP = 1f;
+    public float SaHP = 1f;
+    public float SaATK = 100f;
+    public float SaDEF = 150f;
+    public float SaINI = 0f;
 
-    public float GoMaxHP = 8f;
-    public float GoHP = 8f;
-    public float GoATK = 30f;
-    public float GoDEF = 25f;
-    public float GoINI = 0f;
+    public float ScMaxHP = 30f;
+    public float ScHP = 30f;
+    public float ScATK = 50f;
+    public float ScDEF = 30f;
+    public float ScINI = 0f;
 
-    public float LoMaxHP = 5f;
-    public float LoHP = 5f;
-    public float LoATK = 20f;
-    public float LoDEF = 30f;
-    public float LoINI = 0f;
+    public float MoMaxHP = 20f;
+    public float MoHP = 20f;
+    public float MoATK = 50f;
+    public float MoDEF = 50f;
+    public float MoINI = 0f;
 
-    public float RaMaxHP = 3f;
-    public float RaHP = 3f;
-    public float RaATK = 15f;
-    public float RaDEF = 20f;
-    public float RaINI = 0f;
+    public float JaMaxHP = 60f;
+    public float JaHP = 60f;
+    public float JaATK = 25f;
+    public float JaDEF = 48f;
+    public float JaINI = 0f;
 
     private void Update()
     {
@@ -65,16 +62,16 @@ public class DropDownZ1 : MonoBehaviour
         {
 
             isInCombat = true;
-            
+
             do
             {
-                LaHP -= guerrier.ATK / LaDEF;
-                guerrier.HP -= LaATK / guerrier.DEF;
+                VeHP -= guerrier.ATK / VeDEF;
+                guerrier.HP -= VeATK / guerrier.DEF;
                 Debug.Log("Combat en cours Index 1");
-                Debug.Log(LaHP);
-            } while (LaHP > 0);
+                Debug.Log(VeHP);
+            } while (VeHP > 0);
 
-            if (LaHP <= 0 || guerrier.HP <= 0)
+            if (VeHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
                 dropdown.value = 0;
@@ -90,23 +87,23 @@ public class DropDownZ1 : MonoBehaviour
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
                 TitleLevelUP.gameObject.SetActive(true);
-                LaHP = LaMaxHP;
+                VeHP = VeMaxHP;
             }
 
         }
         if (dropdown.value == 2 && isInCombat == false)
         {
             isInCombat = true;
-            
+
             do
             {
-                RaHP -= guerrier.ATK / RaDEF;
-                guerrier.HP -= RaATK / guerrier.DEF;
+                SaHP -= guerrier.ATK / SaDEF;
+                guerrier.HP -= SaATK / guerrier.DEF;
                 Debug.Log("Combat en cours index 2");
-                Debug.Log(RaHP);
-            } while (RaHP > 0);
+                Debug.Log(SaHP);
+            } while (SaHP > 0);
 
-            if (RaHP <= 0 || guerrier.HP <= 0)
+            if (SaHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
                 dropdown.value = 0;
@@ -122,7 +119,7 @@ public class DropDownZ1 : MonoBehaviour
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
                 TitleLevelUP.gameObject.SetActive(true);
-                RaHP = RaMaxHP;
+                SaHP = SaMaxHP;
             }
 
         }
@@ -132,13 +129,13 @@ public class DropDownZ1 : MonoBehaviour
 
             do
             {
-                LoHP -= guerrier.ATK / LoDEF;
-                guerrier.HP -= LoATK / guerrier.DEF;
+                ScHP -= guerrier.ATK / ScDEF;
+                guerrier.HP -= ScATK / guerrier.DEF;
                 Debug.Log("Combat en cours index 3");
-                Debug.Log(LoHP);
-            } while (LoHP > 0);
+                Debug.Log(ScHP);
+            } while (ScHP > 0);
 
-            if (LoHP <= 0 || guerrier.HP <= 0)
+            if (ScHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
                 dropdown.value = 0;
@@ -154,7 +151,7 @@ public class DropDownZ1 : MonoBehaviour
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
                 TitleLevelUP.gameObject.SetActive(true);
-                LoHP = LoMaxHP;
+                ScHP = ScMaxHP;
             }
 
         }
@@ -164,13 +161,13 @@ public class DropDownZ1 : MonoBehaviour
 
             do
             {
-                GoHP -= guerrier.ATK / GoDEF;
-                guerrier.HP -= GoATK / guerrier.DEF;
+                MoHP -= guerrier.ATK / MoDEF;
+                guerrier.HP -= MoATK / guerrier.DEF;
                 Debug.Log("Combat en cours index 4");
-                Debug.Log(GoHP);
-            } while (GoHP > 0);
+                Debug.Log(MoHP);
+            } while (MoHP > 0);
 
-            if (GoHP <= 0 || guerrier.HP <= 0)
+            if (MoHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
                 dropdown.value = 0;
@@ -186,7 +183,7 @@ public class DropDownZ1 : MonoBehaviour
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
                 TitleLevelUP.gameObject.SetActive(true);
-                GoHP = GoMaxHP;
+                MoHP = MoMaxHP;
             }
 
         }
@@ -196,13 +193,13 @@ public class DropDownZ1 : MonoBehaviour
 
             do
             {
-                ChHP -= guerrier.ATK / ChDEF;
-                guerrier.HP -= ChATK / guerrier.DEF;
+                JaHP -= guerrier.ATK / JaDEF;
+                guerrier.HP -= JaATK / guerrier.DEF;
                 Debug.Log("Combat en cours index 5");
-                Debug.Log(ChHP);
-            } while (ChHP > 0);
+                Debug.Log(JaHP);
+            } while (JaHP > 0);
 
-            if (ChHP <= 0 || guerrier.HP <= 0)
+            if (JaHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
                 dropdown.value = 0;
@@ -218,10 +215,9 @@ public class DropDownZ1 : MonoBehaviour
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
                 TitleLevelUP.gameObject.SetActive(true);
-                ChHP = ChMaxHP;
+                JaHP = JaMaxHP;
             }
 
         }
     }
-
 }

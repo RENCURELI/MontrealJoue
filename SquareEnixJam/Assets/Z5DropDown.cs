@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
-public class DropDownZ1 : MonoBehaviour
+public class Z5DropDown : MonoBehaviour
 {
-    //int turns = 1;
-
     public Guerrier guerrier;
 
     public GameObject Title;
@@ -25,35 +22,35 @@ public class DropDownZ1 : MonoBehaviour
     public TMP_Dropdown dropdown;
     public bool isInCombat = false;
 
-    public float LaMaxHP = 1f;
-    public float LaHP = 1f;
-    public float LaATK = 100f;
-    public float LaDEF = 5f;
-    public float LaINI = 0f;
-
-    public float ChMaxHP = 30f;
-    public float ChHP = 30f;
-    public float ChATK = 5f;
-    public float ChDEF = 30f;
-    public float ChINI = 0f;
-
-    public float GoMaxHP = 8f;
-    public float GoHP = 8f;
-    public float GoATK = 30f;
-    public float GoDEF = 25f;
+    public float GoMaxHP = 45f;
+    public float GoHP = 45f;
+    public float GoATK = 60f;
+    public float GoDEF = 45f;
     public float GoINI = 0f;
 
-    public float LoMaxHP = 5f;
-    public float LoHP = 5f;
-    public float LoATK = 20f;
-    public float LoDEF = 30f;
-    public float LoINI = 0f;
+    public float GlMaxHP = 10f;
+    public float GlHP = 10f;
+    public float GlATK = 100f;
+    public float GlDEF = 100f;
+    public float GlINI = 0f;
 
-    public float RaMaxHP = 3f;
-    public float RaHP = 3f;
-    public float RaATK = 15f;
-    public float RaDEF = 20f;
-    public float RaINI = 0f;
+    public float JeMaxHP = 30f;
+    public float JeHP = 30f;
+    public float JeATK = 50f;
+    public float JeDEF = 60f;
+    public float JeINI = 0f;
+
+    public float KiMaxHP = 22f;
+    public float KiHP = 22f;
+    public float KiATK = 80f;
+    public float KiDEF = 80f;
+    public float KiINI = 0f;
+
+    public float BaMaxHP = 60f;
+    public float BaHP = 60f;
+    public float BaATK = 60f;
+    public float BaDEF = 40f;
+    public float BaINI = 0f;
 
     private void Update()
     {
@@ -65,108 +62,12 @@ public class DropDownZ1 : MonoBehaviour
         {
 
             isInCombat = true;
-            
-            do
-            {
-                LaHP -= guerrier.ATK / LaDEF;
-                guerrier.HP -= LaATK / guerrier.DEF;
-                Debug.Log("Combat en cours Index 1");
-                Debug.Log(LaHP);
-            } while (LaHP > 0);
-
-            if (LaHP <= 0 || guerrier.HP <= 0)
-            {
-                isInCombat = false;
-                dropdown.value = 0;
-                Debug.Log("End");
-                CombatTitle.gameObject.SetActive(false);
-                Title.gameObject.SetActive(true);
-                TitleMaxHP.gameObject.SetActive(true);
-                TitleHP.gameObject.SetActive(true);
-                TitleATK.gameObject.SetActive(true);
-                TitleDEF.gameObject.SetActive(true);
-                TitleINI.gameObject.SetActive(true);
-                TitleCombat.gameObject.SetActive(true);
-                TitleEquipment.gameObject.SetActive(true);
-                TitleRepos.gameObject.SetActive(true);
-                TitleLevelUP.gameObject.SetActive(true);
-                LaHP = LaMaxHP;
-            }
-
-        }
-        if (dropdown.value == 2 && isInCombat == false)
-        {
-            isInCombat = true;
-            
-            do
-            {
-                RaHP -= guerrier.ATK / RaDEF;
-                guerrier.HP -= RaATK / guerrier.DEF;
-                Debug.Log("Combat en cours index 2");
-                Debug.Log(RaHP);
-            } while (RaHP > 0);
-
-            if (RaHP <= 0 || guerrier.HP <= 0)
-            {
-                isInCombat = false;
-                dropdown.value = 0;
-                Debug.Log("End");
-                CombatTitle.gameObject.SetActive(false);
-                Title.gameObject.SetActive(true);
-                TitleMaxHP.gameObject.SetActive(true);
-                TitleHP.gameObject.SetActive(true);
-                TitleATK.gameObject.SetActive(true);
-                TitleDEF.gameObject.SetActive(true);
-                TitleINI.gameObject.SetActive(true);
-                TitleCombat.gameObject.SetActive(true);
-                TitleEquipment.gameObject.SetActive(true);
-                TitleRepos.gameObject.SetActive(true);
-                TitleLevelUP.gameObject.SetActive(true);
-                RaHP = RaMaxHP;
-            }
-
-        }
-        if (dropdown.value == 3 && isInCombat == false)
-        {
-            isInCombat = true;
-
-            do
-            {
-                LoHP -= guerrier.ATK / LoDEF;
-                guerrier.HP -= LoATK / guerrier.DEF;
-                Debug.Log("Combat en cours index 3");
-                Debug.Log(LoHP);
-            } while (LoHP > 0);
-
-            if (LoHP <= 0 || guerrier.HP <= 0)
-            {
-                isInCombat = false;
-                dropdown.value = 0;
-                Debug.Log("End");
-                CombatTitle.gameObject.SetActive(false);
-                Title.gameObject.SetActive(true);
-                TitleMaxHP.gameObject.SetActive(true);
-                TitleHP.gameObject.SetActive(true);
-                TitleATK.gameObject.SetActive(true);
-                TitleDEF.gameObject.SetActive(true);
-                TitleINI.gameObject.SetActive(true);
-                TitleCombat.gameObject.SetActive(true);
-                TitleEquipment.gameObject.SetActive(true);
-                TitleRepos.gameObject.SetActive(true);
-                TitleLevelUP.gameObject.SetActive(true);
-                LoHP = LoMaxHP;
-            }
-
-        }
-        if (dropdown.value == 4 && isInCombat == false)
-        {
-            isInCombat = true;
 
             do
             {
                 GoHP -= guerrier.ATK / GoDEF;
                 guerrier.HP -= GoATK / guerrier.DEF;
-                Debug.Log("Combat en cours index 4");
+                Debug.Log("Combat en cours Index 1");
                 Debug.Log(GoHP);
             } while (GoHP > 0);
 
@@ -190,19 +91,19 @@ public class DropDownZ1 : MonoBehaviour
             }
 
         }
-        if (dropdown.value == 5 && isInCombat == false)
+        if (dropdown.value == 2 && isInCombat == false)
         {
             isInCombat = true;
 
             do
             {
-                ChHP -= guerrier.ATK / ChDEF;
-                guerrier.HP -= ChATK / guerrier.DEF;
-                Debug.Log("Combat en cours index 5");
-                Debug.Log(ChHP);
-            } while (ChHP > 0);
+                GlHP -= guerrier.ATK / GlDEF;
+                guerrier.HP -= GlATK / guerrier.DEF;
+                Debug.Log("Combat en cours index 2");
+                Debug.Log(GlHP);
+            } while (GlHP > 0);
 
-            if (ChHP <= 0 || guerrier.HP <= 0)
+            if (GlHP <= 0 || guerrier.HP <= 0)
             {
                 isInCombat = false;
                 dropdown.value = 0;
@@ -218,10 +119,105 @@ public class DropDownZ1 : MonoBehaviour
                 TitleEquipment.gameObject.SetActive(true);
                 TitleRepos.gameObject.SetActive(true);
                 TitleLevelUP.gameObject.SetActive(true);
-                ChHP = ChMaxHP;
+                GlHP = GlMaxHP;
+            }
+
+        }
+        if (dropdown.value == 3 && isInCombat == false)
+        {
+            isInCombat = true;
+
+            do
+            {
+                JeHP -= guerrier.ATK / JeDEF;
+                guerrier.HP -= JeATK / guerrier.DEF;
+                Debug.Log("Combat en cours index 3");
+                Debug.Log(JeHP);
+            } while (JeHP > 0);
+
+            if (JeHP <= 0 || guerrier.HP <= 0)
+            {
+                isInCombat = false;
+                dropdown.value = 0;
+                Debug.Log("End");
+                CombatTitle.gameObject.SetActive(false);
+                Title.gameObject.SetActive(true);
+                TitleMaxHP.gameObject.SetActive(true);
+                TitleHP.gameObject.SetActive(true);
+                TitleATK.gameObject.SetActive(true);
+                TitleDEF.gameObject.SetActive(true);
+                TitleINI.gameObject.SetActive(true);
+                TitleCombat.gameObject.SetActive(true);
+                TitleEquipment.gameObject.SetActive(true);
+                TitleRepos.gameObject.SetActive(true);
+                TitleLevelUP.gameObject.SetActive(true);
+                JeHP = JeMaxHP;
+            }
+
+        }
+        if (dropdown.value == 4 && isInCombat == false)
+        {
+            isInCombat = true;
+
+            do
+            {
+                KiHP -= guerrier.ATK / KiDEF;
+                guerrier.HP -= KiATK / guerrier.DEF;
+                Debug.Log("Combat en cours index 4");
+                Debug.Log(KiHP);
+            } while (KiHP > 0);
+
+            if (KiHP <= 0 || guerrier.HP <= 0)
+            {
+                isInCombat = false;
+                dropdown.value = 0;
+                Debug.Log("End");
+                CombatTitle.gameObject.SetActive(false);
+                Title.gameObject.SetActive(true);
+                TitleMaxHP.gameObject.SetActive(true);
+                TitleHP.gameObject.SetActive(true);
+                TitleATK.gameObject.SetActive(true);
+                TitleDEF.gameObject.SetActive(true);
+                TitleINI.gameObject.SetActive(true);
+                TitleCombat.gameObject.SetActive(true);
+                TitleEquipment.gameObject.SetActive(true);
+                TitleRepos.gameObject.SetActive(true);
+                TitleLevelUP.gameObject.SetActive(true);
+                KiHP = KiMaxHP;
+            }
+
+        }
+        if (dropdown.value == 5 && isInCombat == false)
+        {
+            isInCombat = true;
+
+            do
+            {
+                BaHP -= guerrier.ATK / BaDEF;
+                guerrier.HP -= BaATK / guerrier.DEF;
+                Debug.Log("Combat en cours index 5");
+                Debug.Log(BaHP);
+            } while (BaHP > 0);
+
+            if (BaHP <= 0 || guerrier.HP <= 0)
+            {
+                isInCombat = false;
+                dropdown.value = 0;
+                Debug.Log("End");
+                CombatTitle.gameObject.SetActive(false);
+                Title.gameObject.SetActive(true);
+                TitleMaxHP.gameObject.SetActive(true);
+                TitleHP.gameObject.SetActive(true);
+                TitleATK.gameObject.SetActive(true);
+                TitleDEF.gameObject.SetActive(true);
+                TitleINI.gameObject.SetActive(true);
+                TitleCombat.gameObject.SetActive(true);
+                TitleEquipment.gameObject.SetActive(true);
+                TitleRepos.gameObject.SetActive(true);
+                TitleLevelUP.gameObject.SetActive(true);
+                BaHP = BaMaxHP;
             }
 
         }
     }
-
 }

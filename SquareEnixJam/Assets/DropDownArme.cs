@@ -14,7 +14,7 @@ public class DropDownArme : MonoBehaviour
     {
         if(dropdown.value == 0)
         {
-
+            guerrier.item1 = Resources.Load<Item>("Test");
         }
 
         if (dropdown.value == 1)

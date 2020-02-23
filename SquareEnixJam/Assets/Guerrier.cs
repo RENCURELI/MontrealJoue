@@ -22,6 +22,8 @@ public class Guerrier : MonoBehaviour
     public GameObject TitleEquipment;
     public GameObject TitleRepos;
 
+    public Item item1;
+
     private void Awake()
     {
         MaxHP = 35f;
